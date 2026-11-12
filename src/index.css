@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+@layer base {
+  :root {
+    --color-paper: #121212;
+    --color-ink: #f3f4f6;
+    --color-ink-2: #9ca3af;
+    --color-ink-3: #6b7280;
+    --color-line: rgba(255, 255, 255, 0.1);
+    --color-line-soft: rgba(255, 255, 255, 0.05);
+    --color-signal: #fbbf24;
+    --color-signal-2: #fbbf24;
+  }
+
+  .light {
+    --color-paper: #ffffff;
+    --color-ink: #111827;
+    --color-ink-2: #4b5563;
+    --color-ink-3: #9ca3af;
+    --color-line: rgba(0, 0, 0, 0.1);
+    --color-line-soft: rgba(0, 0, 0, 0.05);
+    --color-signal: #d97706;
+    --color-signal-2: #d97706;
+  }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -8,7 +32,7 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -21,7 +45,14 @@
   50% { transform: translateY(-10px); }
 }
 
-html {
-  scroll-behavior: smooth;
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
